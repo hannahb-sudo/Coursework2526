@@ -1,0 +1,170 @@
+---
+title: "R - Pumpkins Output"
+format: html
+editor: visual
+---
+
+## Pumpkins Dataset Analysis
+
+### 1. Read in pumpkins.csv data
+```{r}
+#| include: false
+#| echo: false
+pumpkins <- read.csv("C:/Users/hanna/OneDrive/Documents/Computational Bio/Coding Challenge/pumpkins_03.csv")
+library(tidyverse)
+library(gt)
+```
+### 2. Identify the heaviest pumpkin based on variety, location and year
+```{r}
+#| echo: false
+pumpkins_2 <- pumpkins %>%
+  mutate(location=paste(city, state_prov, country, sep = ", ")) 
+pumpkins_heavy <- pumpkins_2 %>%
+  select(variety, location, id, weight_lbs) %>%
+  slice_max(weight_lbs)
+gt(pumpkins_heavy)
+ 
+```
+### 3. Create a new column "weight_kg" based on pounds(lbs) -> kilograms(kg) conversion function
+
+```{r}
+#| echo: false
+pounds_to_kilos <- (kilos = pumpkins_2$weight_lbs * 0.453592)
+pumpkins_3 <- pumpkins_2 %>%
+    mutate(weight_kg=pounds_to_kilos, .after=weight_lbs)
+pumpkins_3 %>%
+  head(10) %>%
+  gt() %>%
+  tab_header(
+     title = "Pumpkins Dataset",
+     subtitle = "Including new column 'weight_kg'"
+  )
+```
+### 4. Create a new column "weight_class"
+First find the maximum, minimum and mean weights (lbs) to determine class parameters
+```{r}
+#| echo: false
+pump_summ <- pumpkins_3 %>%
+    summarise(mean_weight = mean(weight_lbs, na.rm = TRUE),
+              max_weight = max(weight_lbs, na.rm = TRUE),
+              min_weight = min(weight_lbs, na.rm = TRUE))
+gt(pump_summ)
+```
+The weights(lbs) of the pumpkins have been categorised into "Light" (0-750 lbs), "Medium" (750-1500 lbs) and "Heavy" (>1500 lbs)
+```{r}
+#| echo: false
+pumpkins_4 <- subset(pumpkins_3, est_weight != 0.0000 & est_weight < 9000) 
+pumpkins_wc <- pumpkins_4 %>%
+    mutate(weight_class = case_when(
+      weight_lbs <= 750 ~ 'Light (<750 lbs)',
+      weight_lbs <=1750 ~ 'Medium (750-1500 lbs)',
+      TRUE ~ 'Heavy (>1500 lbs)'
+    ))
+pumpkins_wc %>%
+    head(10) %>%
+  gt() %>%
+  tab_header(
+     title = "Sample of Pumpkins Dataset",
+     subtitle = "Including new column 'weight_class'"
+  )
+```
+
+### 5. Estimated vs. actual weight scatter plot
+Values with and estimated weight of "0.0000" have been removed as it is assumed the value was given instead of "NA"
+Values with an estimated weight of < 9000 lbs have been removed as it is assumed they're a result of input error
+```{r}
+#| echo: false
+est_vs_actual_plot <- ggplot(pumpkins_wc, aes(x = est_weight, y = weight_lbs, colour=weight_class))+
+  geom_point(size = 0.5)+
+  scale_colour_manual(values = c('Light (<750 lbs)' = 'hotpink2',
+                               'Medium (750-1500 lbs)' = 'deeppink2',
+                               'Heavy (>1500 lbs)' = 'deeppink4'))+
+  labs(title = "Estimated vs. Actual Weight (lbs) Plot", x = "Estimated Weight (lbs)", y = "Actual Weight (lbs)", colour = "Weight Class") 
+est_vs_actual_plot
+```
+### 6. Filter data to only include pumpkins from three countries
+First determined the countries with the most pumpkin entries to decide which three countries to select
+```{r}
+#| echo: false
+pumpkins_countries <- pumpkins %>%
+  count(country) %>%
+  arrange(desc(n))
+pumpkins_countries %>%
+  head(5) %>%
+  gt()
+```
+From this Canada, Germany and United States were selected
+```{r}
+#| echo: false
+pumpkins_filtered <- pumpkins %>%
+  filter(country == "United States" | country == "Canada" | country == "Germany") 
+pumpkins_filtered%>%
+  head(10) %>%
+  gt() %>%
+  tab_header(
+    title = "Filtered Pumpkins Dataset",
+    subtitle = "Top 3 Countries with The Most Pumpkin Entries "
+  )
+```
+This filtered data is then saved and available as "pumpkins_filtered.csv"
+
+### 7. From the "pumpkins_filtered":
+#### a. Identify the mean weight of pumpkins for each of the three countries. Which had the highest mean pumpkin weight?
+```{r}
+#| echo: false
+pumpkins_filtered_country <- pumpkins_filtered %>%
+  group_by(country) %>%
+  summarise(mean_weight_lbs = mean(weight_lbs, na.rm = TRUE))
+pumpkins_max_weight <- pumpkins_filtered_country %>%
+  slice_max(mean_weight_lbs)
+
+pumpkins_max_weight %>%
+  head() %>%
+  gt()
+```
+
+#### b. Identify the mean weight for each variety of pumpkin for each country. Which country had the lowest mean weight?
+```{r}
+#| echo: false
+#| warning: false
+pumpkins_filtered2 <- pumpkins_filtered %>%
+  group_by(country, variety) %>%
+  summarise(mean_weight_lbs = mean(weight_lbs, na.rm = TRUE))
+
+pumpkins_min_weight <- pumpkins_filtered2 %>%
+  slice_min(mean_weight_lbs)
+
+pumpkins_min_weight %>%
+  head() %>%
+  gt()
+```
+### 8. From "pumpkins_filtered" plot the pumpkin weight distributions for the three countries as a boxplot
+```{r}
+#| echo: false
+filtered_weight_boxplot <- ggplot(aes(x = country,y = weight_lbs, fill = country), data = pumpkins_filtered)+
+  geom_boxplot()+
+  labs(x = "Country", y = "Weight (lbs)", title = "Boxplot of Weight Distribution per Country")+
+  scale_fill_manual(values = c('Canada' = 'hotpink2',
+                               'Germany' = 'olivedrab3',
+                               'United States' = 'steelblue3'))
+
+filtered_weight_boxplot
+```
+### 9. From "pumpkins_filtered" plot a facet plot showing the data from each variety of pumpkin as a separate sub-plot
+```{r}
+#| echo: false
+facet_plot <- ggplot(aes(country, weight_lbs, fill = country), data = pumpkins_filtered)+
+  geom_boxplot()+
+  facet_wrap(~variety)+
+  labs(x = "Country", y = "Weight (lbs)", title = "Facet Plot of Weight Distribution per Country for each Variety")+
+  theme(
+    axis.text.x = element_text(angle = 90)
+  )+
+  scale_fill_manual(values = c('Canada' = 'hotpink2',
+                               'Germany' = 'olivedrab3',
+                               'United States' = 'steelblue3'))
+
+facet_plot
+```
+
+

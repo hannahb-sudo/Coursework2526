@@ -1,0 +1,4965 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hannah Byrne">
+<meta name="dcterms.date" content="2025-12-11">
+
+<title>R - Pumpkins Output</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="R - Pumpkins Output_files/libs/clipboard/clipboard.min.js"></script>
+<script src="R - Pumpkins Output_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="R - Pumpkins Output_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="R - Pumpkins Output_files/libs/quarto-html/popper.min.js"></script>
+<script src="R - Pumpkins Output_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="R - Pumpkins Output_files/libs/quarto-html/anchor.min.js"></script>
+<link href="R - Pumpkins Output_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="R - Pumpkins Output_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="R - Pumpkins Output_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="R - Pumpkins Output_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="R - Pumpkins Output_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">R - Pumpkins Output</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hannah Byrne </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 11, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="pumpkins-dataset-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="pumpkins-dataset-analysis">Pumpkins Dataset Analysis</h2>
+<section id="read-in-pumpkins.csv-data" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-pumpkins.csv-data">1. Read in pumpkins.csv data</h3>
+</section>
+<section id="identify-the-heaviest-pumpkin-based-on-variety-location-and-year" class="level3">
+<h3 class="anchored" data-anchor-id="identify-the-heaviest-pumpkin-based-on-variety-location-and-year">2. Identify the heaviest pumpkin based on variety, location and year</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="kpszaaaylb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kpszaaaylb table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#kpszaaaylb thead, #kpszaaaylb tbody, #kpszaaaylb tfoot, #kpszaaaylb tr, #kpszaaaylb td, #kpszaaaylb th {
+  border-style: none;
+}
+
+#kpszaaaylb p {
+  margin: 0;
+  padding: 0;
+}
+
+#kpszaaaylb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#kpszaaaylb .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kpszaaaylb .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kpszaaaylb .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kpszaaaylb .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kpszaaaylb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kpszaaaylb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kpszaaaylb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kpszaaaylb .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#kpszaaaylb .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#kpszaaaylb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kpszaaaylb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kpszaaaylb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kpszaaaylb .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kpszaaaylb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kpszaaaylb .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kpszaaaylb .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kpszaaaylb .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#kpszaaaylb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kpszaaaylb .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kpszaaaylb .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kpszaaaylb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kpszaaaylb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kpszaaaylb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kpszaaaylb .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kpszaaaylb .gt_left {
+  text-align: left;
+}
+
+#kpszaaaylb .gt_center {
+  text-align: center;
+}
+
+#kpszaaaylb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kpszaaaylb .gt_font_normal {
+  font-weight: normal;
+}
+
+#kpszaaaylb .gt_font_bold {
+  font-weight: bold;
+}
+
+#kpszaaaylb .gt_font_italic {
+  font-style: italic;
+}
+
+#kpszaaaylb .gt_super {
+  font-size: 65%;
+}
+
+#kpszaaaylb .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#kpszaaaylb .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kpszaaaylb .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#kpszaaaylb .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#kpszaaaylb .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#kpszaaaylb .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#kpszaaaylb .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#kpszaaaylb .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#kpszaaaylb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="variety" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variety</th>
+<th id="location" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">location</th>
+<th id="id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id</th>
+<th id="weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_lbs</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="variety">Connecticut Field</td>
+<td class="gt_row gt_left" headers="location">Chianciano, Tuscany, Italy</td>
+<td class="gt_row gt_left" headers="id">2021-P</td>
+<td class="gt_row gt_right" headers="weight_lbs">2823.668</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-new-column-weight_kg-based-on-poundslbs---kilogramskg-conversion-function" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-column-weight_kg-based-on-poundslbs---kilogramskg-conversion-function">3. Create a new column “weight_kg” based on pounds(lbs) -&gt; kilograms(kg) conversion function</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="ewghrygzcz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ewghrygzcz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ewghrygzcz thead, #ewghrygzcz tbody, #ewghrygzcz tfoot, #ewghrygzcz tr, #ewghrygzcz td, #ewghrygzcz th {
+  border-style: none;
+}
+
+#ewghrygzcz p {
+  margin: 0;
+  padding: 0;
+}
+
+#ewghrygzcz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ewghrygzcz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ewghrygzcz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ewghrygzcz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ewghrygzcz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ewghrygzcz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ewghrygzcz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ewghrygzcz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ewghrygzcz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ewghrygzcz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ewghrygzcz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ewghrygzcz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ewghrygzcz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ewghrygzcz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ewghrygzcz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ewghrygzcz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ewghrygzcz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ewghrygzcz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ewghrygzcz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ewghrygzcz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ewghrygzcz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ewghrygzcz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ewghrygzcz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ewghrygzcz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ewghrygzcz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ewghrygzcz .gt_left {
+  text-align: left;
+}
+
+#ewghrygzcz .gt_center {
+  text-align: center;
+}
+
+#ewghrygzcz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ewghrygzcz .gt_font_normal {
+  font-weight: normal;
+}
+
+#ewghrygzcz .gt_font_bold {
+  font-weight: bold;
+}
+
+#ewghrygzcz .gt_font_italic {
+  font-style: italic;
+}
+
+#ewghrygzcz .gt_super {
+  font-size: 65%;
+}
+
+#ewghrygzcz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ewghrygzcz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ewghrygzcz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ewghrygzcz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ewghrygzcz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ewghrygzcz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ewghrygzcz .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ewghrygzcz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ewghrygzcz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="17" class="gt_heading gt_title gt_font_normal">Pumpkins Dataset</th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="17" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Including new column 'weight_kg'</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id</th>
+<th id="place" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">place</th>
+<th id="weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_lbs</th>
+<th id="weight_kg" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_kg</th>
+<th id="grower_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">grower_name</th>
+<th id="city" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">city</th>
+<th id="state_prov" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">state_prov</th>
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">country</th>
+<th id="gpc_site" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">gpc_site</th>
+<th id="seed_mother" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">seed_mother</th>
+<th id="pollinator_father" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">pollinator_father</th>
+<th id="ott" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ott</th>
+<th id="est_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">est_weight</th>
+<th id="pct_chart" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pct_chart</th>
+<th id="variety" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variety</th>
+<th id="dataset_id" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">dataset_id</th>
+<th id="location" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">location</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2014-P</td>
+<td class="gt_row gt_right" headers="place">1333</td>
+<td class="gt_row gt_right" headers="weight_lbs">379.54226</td>
+<td class="gt_row gt_right" headers="weight_kg">172.15733</td>
+<td class="gt_row gt_left" headers="grower_name">Cardot, Celine</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">Other</td>
+<td class="gt_row gt_left" headers="country">France</td>
+<td class="gt_row gt_left" headers="gpc_site">Le Potager Extraordinaire</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">268.9363</td>
+<td class="gt_row gt_right" headers="est_weight">476.0857</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Early Giant</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, Other, France</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">400</td>
+<td class="gt_row gt_right" headers="weight_lbs">1163.73927</td>
+<td class="gt_row gt_right" headers="weight_kg">527.86282</td>
+<td class="gt_row gt_left" headers="grower_name">Cardena, Jose</td>
+<td class="gt_row gt_left" headers="city">Henniker</td>
+<td class="gt_row gt_left" headers="state_prov">New Hampshire</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Deerfield Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">2043 Clementz</td>
+<td class="gt_row gt_left" headers="pollinator_father">2261 Wallace</td>
+<td class="gt_row gt_right" headers="ott">360.8608</td>
+<td class="gt_row gt_right" headers="est_weight">1074.7188</td>
+<td class="gt_row gt_right" headers="pct_chart">8.686625</td>
+<td class="gt_row gt_left" headers="variety">Connecticut Field</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Henniker, New Hampshire, United States</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">903</td>
+<td class="gt_row gt_right" headers="weight_lbs">676.50314</td>
+<td class="gt_row gt_right" headers="weight_kg">306.85641</td>
+<td class="gt_row gt_left" headers="grower_name">Sherwood, Jim</td>
+<td class="gt_row gt_left" headers="city">Mt. Vernon</td>
+<td class="gt_row gt_left" headers="state_prov">Washington</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Washington State Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">759.5 Risi</td>
+<td class="gt_row gt_left" headers="pollinator_father">1702 Sherwood</td>
+<td class="gt_row gt_right" headers="ott">332.4138</td>
+<td class="gt_row gt_right" headers="est_weight">766.7319</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Mt. Vernon, Washington, United States</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">825</td>
+<td class="gt_row gt_right" headers="weight_lbs">883.61348</td>
+<td class="gt_row gt_right" headers="weight_kg">400.80000</td>
+<td class="gt_row gt_left" headers="grower_name">Prager, Mike</td>
+<td class="gt_row gt_left" headers="city">Wheaton</td>
+<td class="gt_row gt_left" headers="state_prov">Illinois</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Siegels Cottonwood Farms</td>
+<td class="gt_row gt_left" headers="seed_mother">2145 McMullen</td>
+<td class="gt_row gt_left" headers="pollinator_father">2145 McMullen</td>
+<td class="gt_row gt_right" headers="ott">339.7507</td>
+<td class="gt_row gt_right" headers="est_weight">747.8686</td>
+<td class="gt_row gt_right" headers="pct_chart">13.099229</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Wheaton, Illinois, United States</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2017-P</td>
+<td class="gt_row gt_right" headers="place">1386</td>
+<td class="gt_row gt_right" headers="weight_lbs">280.23593</td>
+<td class="gt_row gt_right" headers="weight_kg">127.11277</td>
+<td class="gt_row gt_left" headers="grower_name">Luckenwalde, Team</td>
+<td class="gt_row gt_left" headers="city">Oberwellenborn</td>
+<td class="gt_row gt_left" headers="state_prov">Thuringia</td>
+<td class="gt_row gt_left" headers="country">Germany</td>
+<td class="gt_row gt_left" headers="gpc_site">Tharinger Meisterschaft</td>
+<td class="gt_row gt_left" headers="seed_mother">unknown</td>
+<td class="gt_row gt_left" headers="pollinator_father">unknown</td>
+<td class="gt_row gt_right" headers="ott">238.8667</td>
+<td class="gt_row gt_right" headers="est_weight">274.2493</td>
+<td class="gt_row gt_right" headers="pct_chart">1.014073</td>
+<td class="gt_row gt_left" headers="variety">Champion</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Oberwellenborn, Thuringia, Germany</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2013-P</td>
+<td class="gt_row gt_right" headers="place">1254</td>
+<td class="gt_row gt_right" headers="weight_lbs">267.78930</td>
+<td class="gt_row gt_right" headers="weight_kg">121.46709</td>
+<td class="gt_row gt_left" headers="grower_name">Clementz, Mark</td>
+<td class="gt_row gt_left" headers="city">San Jose</td>
+<td class="gt_row gt_left" headers="state_prov">California</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Elk Grove Giant Pumpkin Festival</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">0.0000</td>
+<td class="gt_row gt_right" headers="est_weight">0.0000</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Rouge Vif d’Etampes</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">San Jose, California, United States</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2020-P</td>
+<td class="gt_row gt_right" headers="place">1155</td>
+<td class="gt_row gt_right" headers="weight_lbs">254.54855</td>
+<td class="gt_row gt_right" headers="weight_kg">115.46119</td>
+<td class="gt_row gt_left" headers="grower_name">Agostinelli, Paolo</td>
+<td class="gt_row gt_left" headers="city">Semproniano</td>
+<td class="gt_row gt_left" headers="state_prov">Tuscany</td>
+<td class="gt_row gt_left" headers="country">Italy</td>
+<td class="gt_row gt_left" headers="gpc_site">Pesa la Zucca! Foiano</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">222.7582</td>
+<td class="gt_row gt_right" headers="est_weight">254.8119</td>
+<td class="gt_row gt_right" headers="pct_chart">2.989998</td>
+<td class="gt_row gt_left" headers="variety">Howden</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Semproniano, Tuscany, Italy</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2021-P</td>
+<td class="gt_row gt_right" headers="place">1359</td>
+<td class="gt_row gt_right" headers="weight_lbs">54.08999</td>
+<td class="gt_row gt_right" headers="weight_kg">24.53479</td>
+<td class="gt_row gt_left" headers="grower_name">Mundy, Ezekial</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">Other</td>
+<td class="gt_row gt_left" headers="country">New Zealand</td>
+<td class="gt_row gt_left" headers="gpc_site">The Great Pumpkin Carnival Hamilton Gardens</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">0.0000</td>
+<td class="gt_row gt_right" headers="est_weight">0.0000</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Jack O'Lantern</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, Other, New Zealand</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">607</td>
+<td class="gt_row gt_right" headers="weight_lbs">1090.02818</td>
+<td class="gt_row gt_right" headers="weight_kg">494.42806</td>
+<td class="gt_row gt_left" headers="grower_name">Plibersek, Ales</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">Other</td>
+<td class="gt_row gt_left" headers="country">Slovenia</td>
+<td class="gt_row gt_left" headers="gpc_site">Slovenian Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">374.1147</td>
+<td class="gt_row gt_right" headers="est_weight">1074.5635</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Blue Hubbard</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, Other, Slovenia</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">1319</td>
+<td class="gt_row gt_right" headers="weight_lbs">296.16541</td>
+<td class="gt_row gt_right" headers="weight_kg">134.33826</td>
+<td class="gt_row gt_left" headers="grower_name">Hain, Fred</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">British Columbia</td>
+<td class="gt_row gt_left" headers="country">Canada</td>
+<td class="gt_row gt_left" headers="gpc_site">BC Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1543 Carley 2017</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">238.2897</td>
+<td class="gt_row gt_right" headers="est_weight">264.7044</td>
+<td class="gt_row gt_right" headers="pct_chart">9.964942</td>
+<td class="gt_row gt_left" headers="variety">Prizewinner</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, British Columbia, Canada</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-new-column-weight_class" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-column-weight_class">4. Create a new column “weight_class”</h3>
+<p>First find the maximum, minimum and mean weights (lbs) to determine class parameters</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="lwdocydcaa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lwdocydcaa table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lwdocydcaa thead, #lwdocydcaa tbody, #lwdocydcaa tfoot, #lwdocydcaa tr, #lwdocydcaa td, #lwdocydcaa th {
+  border-style: none;
+}
+
+#lwdocydcaa p {
+  margin: 0;
+  padding: 0;
+}
+
+#lwdocydcaa .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lwdocydcaa .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lwdocydcaa .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lwdocydcaa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lwdocydcaa .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lwdocydcaa .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lwdocydcaa .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lwdocydcaa .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lwdocydcaa .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lwdocydcaa .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lwdocydcaa .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lwdocydcaa .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lwdocydcaa .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lwdocydcaa .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lwdocydcaa .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lwdocydcaa .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lwdocydcaa .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lwdocydcaa .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lwdocydcaa .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lwdocydcaa .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lwdocydcaa .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lwdocydcaa .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lwdocydcaa .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lwdocydcaa .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lwdocydcaa .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lwdocydcaa .gt_left {
+  text-align: left;
+}
+
+#lwdocydcaa .gt_center {
+  text-align: center;
+}
+
+#lwdocydcaa .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lwdocydcaa .gt_font_normal {
+  font-weight: normal;
+}
+
+#lwdocydcaa .gt_font_bold {
+  font-weight: bold;
+}
+
+#lwdocydcaa .gt_font_italic {
+  font-style: italic;
+}
+
+#lwdocydcaa .gt_super {
+  font-size: 65%;
+}
+
+#lwdocydcaa .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lwdocydcaa .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lwdocydcaa .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lwdocydcaa .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lwdocydcaa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lwdocydcaa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lwdocydcaa .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lwdocydcaa .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lwdocydcaa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="mean_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean_weight</th>
+<th id="max_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">max_weight</th>
+<th id="min_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">min_weight</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="mean_weight">775.9243</td>
+<td class="gt_row gt_right" headers="max_weight">2823.668</td>
+<td class="gt_row gt_right" headers="min_weight">0.1516009</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>The weights(lbs) of the pumpkins have been categorised into “Light” (0-750 lbs), “Medium” (750-1500 lbs) and “Heavy” (&gt;1500 lbs)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="iatgwerffu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iatgwerffu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#iatgwerffu thead, #iatgwerffu tbody, #iatgwerffu tfoot, #iatgwerffu tr, #iatgwerffu td, #iatgwerffu th {
+  border-style: none;
+}
+
+#iatgwerffu p {
+  margin: 0;
+  padding: 0;
+}
+
+#iatgwerffu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#iatgwerffu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#iatgwerffu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#iatgwerffu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#iatgwerffu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#iatgwerffu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#iatgwerffu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#iatgwerffu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#iatgwerffu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#iatgwerffu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#iatgwerffu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#iatgwerffu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#iatgwerffu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#iatgwerffu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#iatgwerffu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iatgwerffu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#iatgwerffu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#iatgwerffu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#iatgwerffu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iatgwerffu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#iatgwerffu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iatgwerffu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#iatgwerffu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iatgwerffu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#iatgwerffu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#iatgwerffu .gt_left {
+  text-align: left;
+}
+
+#iatgwerffu .gt_center {
+  text-align: center;
+}
+
+#iatgwerffu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#iatgwerffu .gt_font_normal {
+  font-weight: normal;
+}
+
+#iatgwerffu .gt_font_bold {
+  font-weight: bold;
+}
+
+#iatgwerffu .gt_font_italic {
+  font-style: italic;
+}
+
+#iatgwerffu .gt_super {
+  font-size: 65%;
+}
+
+#iatgwerffu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#iatgwerffu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#iatgwerffu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#iatgwerffu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#iatgwerffu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#iatgwerffu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#iatgwerffu .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#iatgwerffu .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#iatgwerffu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="18" class="gt_heading gt_title gt_font_normal">Sample of Pumpkins Dataset</th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="18" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Including new column 'weight_class'</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id</th>
+<th id="place" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">place</th>
+<th id="weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_lbs</th>
+<th id="weight_kg" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_kg</th>
+<th id="grower_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">grower_name</th>
+<th id="city" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">city</th>
+<th id="state_prov" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">state_prov</th>
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">country</th>
+<th id="gpc_site" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">gpc_site</th>
+<th id="seed_mother" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">seed_mother</th>
+<th id="pollinator_father" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">pollinator_father</th>
+<th id="ott" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ott</th>
+<th id="est_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">est_weight</th>
+<th id="pct_chart" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pct_chart</th>
+<th id="variety" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variety</th>
+<th id="dataset_id" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">dataset_id</th>
+<th id="location" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">location</th>
+<th id="weight_class" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">weight_class</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2014-P</td>
+<td class="gt_row gt_right" headers="place">1333</td>
+<td class="gt_row gt_right" headers="weight_lbs">379.5423</td>
+<td class="gt_row gt_right" headers="weight_kg">172.1573</td>
+<td class="gt_row gt_left" headers="grower_name">Cardot, Celine</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">Other</td>
+<td class="gt_row gt_left" headers="country">France</td>
+<td class="gt_row gt_left" headers="gpc_site">Le Potager Extraordinaire</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">268.9363</td>
+<td class="gt_row gt_right" headers="est_weight">476.0857</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Early Giant</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, Other, France</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">400</td>
+<td class="gt_row gt_right" headers="weight_lbs">1163.7393</td>
+<td class="gt_row gt_right" headers="weight_kg">527.8628</td>
+<td class="gt_row gt_left" headers="grower_name">Cardena, Jose</td>
+<td class="gt_row gt_left" headers="city">Henniker</td>
+<td class="gt_row gt_left" headers="state_prov">New Hampshire</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Deerfield Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">2043 Clementz</td>
+<td class="gt_row gt_left" headers="pollinator_father">2261 Wallace</td>
+<td class="gt_row gt_right" headers="ott">360.8608</td>
+<td class="gt_row gt_right" headers="est_weight">1074.7188</td>
+<td class="gt_row gt_right" headers="pct_chart">8.686625</td>
+<td class="gt_row gt_left" headers="variety">Connecticut Field</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Henniker, New Hampshire, United States</td>
+<td class="gt_row gt_left" headers="weight_class">Medium (750-1500 lbs)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">903</td>
+<td class="gt_row gt_right" headers="weight_lbs">676.5031</td>
+<td class="gt_row gt_right" headers="weight_kg">306.8564</td>
+<td class="gt_row gt_left" headers="grower_name">Sherwood, Jim</td>
+<td class="gt_row gt_left" headers="city">Mt. Vernon</td>
+<td class="gt_row gt_left" headers="state_prov">Washington</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Washington State Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">759.5 Risi</td>
+<td class="gt_row gt_left" headers="pollinator_father">1702 Sherwood</td>
+<td class="gt_row gt_right" headers="ott">332.4138</td>
+<td class="gt_row gt_right" headers="est_weight">766.7319</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Mt. Vernon, Washington, United States</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">825</td>
+<td class="gt_row gt_right" headers="weight_lbs">883.6135</td>
+<td class="gt_row gt_right" headers="weight_kg">400.8000</td>
+<td class="gt_row gt_left" headers="grower_name">Prager, Mike</td>
+<td class="gt_row gt_left" headers="city">Wheaton</td>
+<td class="gt_row gt_left" headers="state_prov">Illinois</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Siegels Cottonwood Farms</td>
+<td class="gt_row gt_left" headers="seed_mother">2145 McMullen</td>
+<td class="gt_row gt_left" headers="pollinator_father">2145 McMullen</td>
+<td class="gt_row gt_right" headers="ott">339.7507</td>
+<td class="gt_row gt_right" headers="est_weight">747.8686</td>
+<td class="gt_row gt_right" headers="pct_chart">13.099229</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Wheaton, Illinois, United States</td>
+<td class="gt_row gt_left" headers="weight_class">Medium (750-1500 lbs)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2017-P</td>
+<td class="gt_row gt_right" headers="place">1386</td>
+<td class="gt_row gt_right" headers="weight_lbs">280.2359</td>
+<td class="gt_row gt_right" headers="weight_kg">127.1128</td>
+<td class="gt_row gt_left" headers="grower_name">Luckenwalde, Team</td>
+<td class="gt_row gt_left" headers="city">Oberwellenborn</td>
+<td class="gt_row gt_left" headers="state_prov">Thuringia</td>
+<td class="gt_row gt_left" headers="country">Germany</td>
+<td class="gt_row gt_left" headers="gpc_site">Tharinger Meisterschaft</td>
+<td class="gt_row gt_left" headers="seed_mother">unknown</td>
+<td class="gt_row gt_left" headers="pollinator_father">unknown</td>
+<td class="gt_row gt_right" headers="ott">238.8667</td>
+<td class="gt_row gt_right" headers="est_weight">274.2493</td>
+<td class="gt_row gt_right" headers="pct_chart">1.014073</td>
+<td class="gt_row gt_left" headers="variety">Champion</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Oberwellenborn, Thuringia, Germany</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2020-P</td>
+<td class="gt_row gt_right" headers="place">1155</td>
+<td class="gt_row gt_right" headers="weight_lbs">254.5486</td>
+<td class="gt_row gt_right" headers="weight_kg">115.4612</td>
+<td class="gt_row gt_left" headers="grower_name">Agostinelli, Paolo</td>
+<td class="gt_row gt_left" headers="city">Semproniano</td>
+<td class="gt_row gt_left" headers="state_prov">Tuscany</td>
+<td class="gt_row gt_left" headers="country">Italy</td>
+<td class="gt_row gt_left" headers="gpc_site">Pesa la Zucca! Foiano</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">222.7582</td>
+<td class="gt_row gt_right" headers="est_weight">254.8119</td>
+<td class="gt_row gt_right" headers="pct_chart">2.989998</td>
+<td class="gt_row gt_left" headers="variety">Howden</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Semproniano, Tuscany, Italy</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">607</td>
+<td class="gt_row gt_right" headers="weight_lbs">1090.0282</td>
+<td class="gt_row gt_right" headers="weight_kg">494.4281</td>
+<td class="gt_row gt_left" headers="grower_name">Plibersek, Ales</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">Other</td>
+<td class="gt_row gt_left" headers="country">Slovenia</td>
+<td class="gt_row gt_left" headers="gpc_site">Slovenian Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">374.1147</td>
+<td class="gt_row gt_right" headers="est_weight">1074.5635</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Blue Hubbard</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, Other, Slovenia</td>
+<td class="gt_row gt_left" headers="weight_class">Medium (750-1500 lbs)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">1319</td>
+<td class="gt_row gt_right" headers="weight_lbs">296.1654</td>
+<td class="gt_row gt_right" headers="weight_kg">134.3383</td>
+<td class="gt_row gt_left" headers="grower_name">Hain, Fred</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">British Columbia</td>
+<td class="gt_row gt_left" headers="country">Canada</td>
+<td class="gt_row gt_left" headers="gpc_site">BC Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1543 Carley 2017</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">238.2897</td>
+<td class="gt_row gt_right" headers="est_weight">264.7044</td>
+<td class="gt_row gt_right" headers="pct_chart">9.964942</td>
+<td class="gt_row gt_left" headers="variety">Prizewinner</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">NA, British Columbia, Canada</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2020-P</td>
+<td class="gt_row gt_right" headers="place">627</td>
+<td class="gt_row gt_right" headers="weight_lbs">807.0456</td>
+<td class="gt_row gt_right" headers="weight_kg">366.0694</td>
+<td class="gt_row gt_left" headers="grower_name">Farr, Daniel</td>
+<td class="gt_row gt_left" headers="city">Cullman</td>
+<td class="gt_row gt_left" headers="state_prov">Alabama</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Kentucky State Fair Largest Pumpkin Contest</td>
+<td class="gt_row gt_left" headers="seed_mother">1679 Holland</td>
+<td class="gt_row gt_left" headers="pollinator_father">Open</td>
+<td class="gt_row gt_right" headers="ott">325.0666</td>
+<td class="gt_row gt_right" headers="est_weight">844.7656</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Blue Hubbard</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Cullman, Alabama, United States</td>
+<td class="gt_row gt_left" headers="weight_class">Medium (750-1500 lbs)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">1233</td>
+<td class="gt_row gt_right" headers="weight_lbs">367.1292</td>
+<td class="gt_row gt_right" headers="weight_kg">166.5269</td>
+<td class="gt_row gt_left" headers="grower_name">Patterson, Scott</td>
+<td class="gt_row gt_left" headers="city">Lakewood</td>
+<td class="gt_row gt_left" headers="state_prov">Colorado</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Smith Farms Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1580 Wabner</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">273.0736</td>
+<td class="gt_row gt_right" headers="est_weight">437.6961</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Rouge Vif d’Etampes</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+<td class="gt_row gt_left" headers="location">Lakewood, Colorado, United States</td>
+<td class="gt_row gt_left" headers="weight_class">Light (&lt;750 lbs)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="estimated-vs.-actual-weight-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="estimated-vs.-actual-weight-scatter-plot">5. Estimated vs.&nbsp;actual weight scatter plot</h3>
+<p>Values with and estimated weight of “0.0000” have been removed as it is assumed the value was given instead of “NA” Values with an estimated weight of &lt; 9000 lbs have been removed as it is assumed they’re a result of input error</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R---Pumpkins-Output_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="filter-data-to-only-include-pumpkins-from-three-countries" class="level3">
+<h3 class="anchored" data-anchor-id="filter-data-to-only-include-pumpkins-from-three-countries">6. Filter data to only include pumpkins from three countries</h3>
+<p>First determined the countries with the most pumpkin entries to decide which three countries to select</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="dfvulrimib" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dfvulrimib table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#dfvulrimib thead, #dfvulrimib tbody, #dfvulrimib tfoot, #dfvulrimib tr, #dfvulrimib td, #dfvulrimib th {
+  border-style: none;
+}
+
+#dfvulrimib p {
+  margin: 0;
+  padding: 0;
+}
+
+#dfvulrimib .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#dfvulrimib .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dfvulrimib .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dfvulrimib .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dfvulrimib .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dfvulrimib .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dfvulrimib .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dfvulrimib .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dfvulrimib .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#dfvulrimib .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#dfvulrimib .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dfvulrimib .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dfvulrimib .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dfvulrimib .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dfvulrimib .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfvulrimib .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dfvulrimib .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dfvulrimib .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#dfvulrimib .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfvulrimib .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dfvulrimib .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfvulrimib .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dfvulrimib .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfvulrimib .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dfvulrimib .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dfvulrimib .gt_left {
+  text-align: left;
+}
+
+#dfvulrimib .gt_center {
+  text-align: center;
+}
+
+#dfvulrimib .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dfvulrimib .gt_font_normal {
+  font-weight: normal;
+}
+
+#dfvulrimib .gt_font_bold {
+  font-weight: bold;
+}
+
+#dfvulrimib .gt_font_italic {
+  font-style: italic;
+}
+
+#dfvulrimib .gt_super {
+  font-size: 65%;
+}
+
+#dfvulrimib .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#dfvulrimib .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dfvulrimib .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dfvulrimib .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dfvulrimib .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dfvulrimib .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dfvulrimib .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#dfvulrimib .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#dfvulrimib div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">country</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_right" headers="n">9834</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country">Canada</td>
+<td class="gt_row gt_right" headers="n">2206</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">Germany</td>
+<td class="gt_row gt_right" headers="n">1184</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country">Italy</td>
+<td class="gt_row gt_right" headers="n">520</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">Austria</td>
+<td class="gt_row gt_right" headers="n">398</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>From this Canada, Germany and United States were selected</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="pidtqtddvj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pidtqtddvj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#pidtqtddvj thead, #pidtqtddvj tbody, #pidtqtddvj tfoot, #pidtqtddvj tr, #pidtqtddvj td, #pidtqtddvj th {
+  border-style: none;
+}
+
+#pidtqtddvj p {
+  margin: 0;
+  padding: 0;
+}
+
+#pidtqtddvj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#pidtqtddvj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pidtqtddvj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pidtqtddvj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pidtqtddvj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pidtqtddvj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pidtqtddvj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pidtqtddvj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pidtqtddvj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#pidtqtddvj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#pidtqtddvj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pidtqtddvj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pidtqtddvj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pidtqtddvj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pidtqtddvj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pidtqtddvj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pidtqtddvj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pidtqtddvj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#pidtqtddvj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pidtqtddvj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pidtqtddvj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pidtqtddvj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pidtqtddvj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pidtqtddvj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pidtqtddvj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pidtqtddvj .gt_left {
+  text-align: left;
+}
+
+#pidtqtddvj .gt_center {
+  text-align: center;
+}
+
+#pidtqtddvj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pidtqtddvj .gt_font_normal {
+  font-weight: normal;
+}
+
+#pidtqtddvj .gt_font_bold {
+  font-weight: bold;
+}
+
+#pidtqtddvj .gt_font_italic {
+  font-style: italic;
+}
+
+#pidtqtddvj .gt_super {
+  font-size: 65%;
+}
+
+#pidtqtddvj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#pidtqtddvj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pidtqtddvj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#pidtqtddvj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#pidtqtddvj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#pidtqtddvj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#pidtqtddvj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#pidtqtddvj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#pidtqtddvj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="15" class="gt_heading gt_title gt_font_normal">Filtered Pumpkins Dataset</th>
+</tr>
+<tr class="gt_heading even">
+<th colspan="15" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Top 3 Countries with The Most Pumpkin Entries</th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">id</th>
+<th id="place" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">place</th>
+<th id="weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">weight_lbs</th>
+<th id="grower_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">grower_name</th>
+<th id="city" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">city</th>
+<th id="state_prov" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">state_prov</th>
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">country</th>
+<th id="gpc_site" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">gpc_site</th>
+<th id="seed_mother" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">seed_mother</th>
+<th id="pollinator_father" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">pollinator_father</th>
+<th id="ott" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ott</th>
+<th id="est_weight" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">est_weight</th>
+<th id="pct_chart" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pct_chart</th>
+<th id="variety" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variety</th>
+<th id="dataset_id" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">dataset_id</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">400</td>
+<td class="gt_row gt_right" headers="weight_lbs">1163.7393</td>
+<td class="gt_row gt_left" headers="grower_name">Cardena, Jose</td>
+<td class="gt_row gt_left" headers="city">Henniker</td>
+<td class="gt_row gt_left" headers="state_prov">New Hampshire</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Deerfield Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">2043 Clementz</td>
+<td class="gt_row gt_left" headers="pollinator_father">2261 Wallace</td>
+<td class="gt_row gt_right" headers="ott">360.8608</td>
+<td class="gt_row gt_right" headers="est_weight">1074.7188</td>
+<td class="gt_row gt_right" headers="pct_chart">8.686625</td>
+<td class="gt_row gt_left" headers="variety">Connecticut Field</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2018-P</td>
+<td class="gt_row gt_right" headers="place">903</td>
+<td class="gt_row gt_right" headers="weight_lbs">676.5031</td>
+<td class="gt_row gt_left" headers="grower_name">Sherwood, Jim</td>
+<td class="gt_row gt_left" headers="city">Mt. Vernon</td>
+<td class="gt_row gt_left" headers="state_prov">Washington</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Washington State Fair</td>
+<td class="gt_row gt_left" headers="seed_mother">759.5 Risi</td>
+<td class="gt_row gt_left" headers="pollinator_father">1702 Sherwood</td>
+<td class="gt_row gt_right" headers="ott">332.4138</td>
+<td class="gt_row gt_right" headers="est_weight">766.7319</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">825</td>
+<td class="gt_row gt_right" headers="weight_lbs">883.6135</td>
+<td class="gt_row gt_left" headers="grower_name">Prager, Mike</td>
+<td class="gt_row gt_left" headers="city">Wheaton</td>
+<td class="gt_row gt_left" headers="state_prov">Illinois</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Siegels Cottonwood Farms</td>
+<td class="gt_row gt_left" headers="seed_mother">2145 McMullen</td>
+<td class="gt_row gt_left" headers="pollinator_father">2145 McMullen</td>
+<td class="gt_row gt_right" headers="ott">339.7507</td>
+<td class="gt_row gt_right" headers="est_weight">747.8686</td>
+<td class="gt_row gt_right" headers="pct_chart">13.099229</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2017-P</td>
+<td class="gt_row gt_right" headers="place">1386</td>
+<td class="gt_row gt_right" headers="weight_lbs">280.2359</td>
+<td class="gt_row gt_left" headers="grower_name">Luckenwalde, Team</td>
+<td class="gt_row gt_left" headers="city">Oberwellenborn</td>
+<td class="gt_row gt_left" headers="state_prov">Thuringia</td>
+<td class="gt_row gt_left" headers="country">Germany</td>
+<td class="gt_row gt_left" headers="gpc_site">Tharinger Meisterschaft</td>
+<td class="gt_row gt_left" headers="seed_mother">unknown</td>
+<td class="gt_row gt_left" headers="pollinator_father">unknown</td>
+<td class="gt_row gt_right" headers="ott">238.8667</td>
+<td class="gt_row gt_right" headers="est_weight">274.2493</td>
+<td class="gt_row gt_right" headers="pct_chart">1.014073</td>
+<td class="gt_row gt_left" headers="variety">Champion</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2013-P</td>
+<td class="gt_row gt_right" headers="place">1254</td>
+<td class="gt_row gt_right" headers="weight_lbs">267.7893</td>
+<td class="gt_row gt_left" headers="grower_name">Clementz, Mark</td>
+<td class="gt_row gt_left" headers="city">San Jose</td>
+<td class="gt_row gt_left" headers="state_prov">California</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Elk Grove Giant Pumpkin Festival</td>
+<td class="gt_row gt_left" headers="seed_mother">NA</td>
+<td class="gt_row gt_left" headers="pollinator_father">NA</td>
+<td class="gt_row gt_right" headers="ott">0.0000</td>
+<td class="gt_row gt_right" headers="est_weight">0.0000</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Rouge Vif d’Etampes</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">1319</td>
+<td class="gt_row gt_right" headers="weight_lbs">296.1654</td>
+<td class="gt_row gt_left" headers="grower_name">Hain, Fred</td>
+<td class="gt_row gt_left" headers="city">NA</td>
+<td class="gt_row gt_left" headers="state_prov">British Columbia</td>
+<td class="gt_row gt_left" headers="country">Canada</td>
+<td class="gt_row gt_left" headers="gpc_site">BC Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1543 Carley 2017</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">238.2897</td>
+<td class="gt_row gt_right" headers="est_weight">264.7044</td>
+<td class="gt_row gt_right" headers="pct_chart">9.964942</td>
+<td class="gt_row gt_left" headers="variety">Prizewinner</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2020-P</td>
+<td class="gt_row gt_right" headers="place">627</td>
+<td class="gt_row gt_right" headers="weight_lbs">807.0456</td>
+<td class="gt_row gt_left" headers="grower_name">Farr, Daniel</td>
+<td class="gt_row gt_left" headers="city">Cullman</td>
+<td class="gt_row gt_left" headers="state_prov">Alabama</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Kentucky State Fair Largest Pumpkin Contest</td>
+<td class="gt_row gt_left" headers="seed_mother">1679 Holland</td>
+<td class="gt_row gt_left" headers="pollinator_father">Open</td>
+<td class="gt_row gt_right" headers="ott">325.0666</td>
+<td class="gt_row gt_right" headers="est_weight">844.7656</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Blue Hubbard</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">1233</td>
+<td class="gt_row gt_right" headers="weight_lbs">367.1292</td>
+<td class="gt_row gt_left" headers="grower_name">Patterson, Scott</td>
+<td class="gt_row gt_left" headers="city">Lakewood</td>
+<td class="gt_row gt_left" headers="state_prov">Colorado</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Smith Farms Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1580 Wabner</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">273.0736</td>
+<td class="gt_row gt_right" headers="est_weight">437.6961</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Rouge Vif d’Etampes</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="id">2016-P</td>
+<td class="gt_row gt_right" headers="place">633</td>
+<td class="gt_row gt_right" headers="weight_lbs">1027.3832</td>
+<td class="gt_row gt_left" headers="grower_name">Watson, Ben</td>
+<td class="gt_row gt_left" headers="city">Langley</td>
+<td class="gt_row gt_left" headers="state_prov">British Columbia</td>
+<td class="gt_row gt_left" headers="country">Canada</td>
+<td class="gt_row gt_left" headers="gpc_site">BC Giant Pumpkin Weigh-off</td>
+<td class="gt_row gt_left" headers="seed_mother">1117 Chan</td>
+<td class="gt_row gt_left" headers="pollinator_father">1427.5 Carley</td>
+<td class="gt_row gt_right" headers="ott">356.0172</td>
+<td class="gt_row gt_right" headers="est_weight">1061.8893</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Early Giant</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="id">2019-P</td>
+<td class="gt_row gt_right" headers="place">964</td>
+<td class="gt_row gt_right" headers="weight_lbs">525.7619</td>
+<td class="gt_row gt_left" headers="grower_name">Hanks, Susan</td>
+<td class="gt_row gt_left" headers="city">Pocatello</td>
+<td class="gt_row gt_left" headers="state_prov">Idaho</td>
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_left" headers="gpc_site">Hee Haw Farms</td>
+<td class="gt_row gt_left" headers="seed_mother">1471 Marshall</td>
+<td class="gt_row gt_left" headers="pollinator_father">Self</td>
+<td class="gt_row gt_right" headers="ott">283.5898</td>
+<td class="gt_row gt_right" headers="est_weight">567.4226</td>
+<td class="gt_row gt_right" headers="pct_chart">0.000000</td>
+<td class="gt_row gt_left" headers="variety">Casper</td>
+<td class="gt_row gt_right" headers="dataset_id">3</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This filtered data is then saved and available as “pumpkins_filtered.csv”</p>
+</section>
+<section id="from-the-pumpkins_filtered" class="level3">
+<h3 class="anchored" data-anchor-id="from-the-pumpkins_filtered">7. From the “pumpkins_filtered”:</h3>
+<section id="a.-identify-the-mean-weight-of-pumpkins-for-each-of-the-three-countries.-which-had-the-highest-mean-pumpkin-weight" class="level4">
+<h4 class="anchored" data-anchor-id="a.-identify-the-mean-weight-of-pumpkins-for-each-of-the-three-countries.-which-had-the-highest-mean-pumpkin-weight">a. Identify the mean weight of pumpkins for each of the three countries. Which had the highest mean pumpkin weight?</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="lvbhdqtpug" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lvbhdqtpug table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lvbhdqtpug thead, #lvbhdqtpug tbody, #lvbhdqtpug tfoot, #lvbhdqtpug tr, #lvbhdqtpug td, #lvbhdqtpug th {
+  border-style: none;
+}
+
+#lvbhdqtpug p {
+  margin: 0;
+  padding: 0;
+}
+
+#lvbhdqtpug .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lvbhdqtpug .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lvbhdqtpug .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lvbhdqtpug .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lvbhdqtpug .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lvbhdqtpug .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lvbhdqtpug .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lvbhdqtpug .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lvbhdqtpug .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lvbhdqtpug .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lvbhdqtpug .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lvbhdqtpug .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lvbhdqtpug .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lvbhdqtpug .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lvbhdqtpug .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvbhdqtpug .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lvbhdqtpug .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lvbhdqtpug .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lvbhdqtpug .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvbhdqtpug .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lvbhdqtpug .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvbhdqtpug .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lvbhdqtpug .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvbhdqtpug .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lvbhdqtpug .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvbhdqtpug .gt_left {
+  text-align: left;
+}
+
+#lvbhdqtpug .gt_center {
+  text-align: center;
+}
+
+#lvbhdqtpug .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lvbhdqtpug .gt_font_normal {
+  font-weight: normal;
+}
+
+#lvbhdqtpug .gt_font_bold {
+  font-weight: bold;
+}
+
+#lvbhdqtpug .gt_font_italic {
+  font-style: italic;
+}
+
+#lvbhdqtpug .gt_super {
+  font-size: 65%;
+}
+
+#lvbhdqtpug .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lvbhdqtpug .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lvbhdqtpug .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lvbhdqtpug .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lvbhdqtpug .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lvbhdqtpug .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lvbhdqtpug .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lvbhdqtpug .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lvbhdqtpug div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">country</th>
+<th id="mean_weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean_weight_lbs</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">United States</td>
+<td class="gt_row gt_right" headers="mean_weight_lbs">840.8218</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="b.-identify-the-mean-weight-for-each-variety-of-pumpkin-for-each-country.-which-country-had-the-lowest-mean-weight" class="level4">
+<h4 class="anchored" data-anchor-id="b.-identify-the-mean-weight-for-each-variety-of-pumpkin-for-each-country.-which-country-had-the-lowest-mean-weight">b. Identify the mean weight for each variety of pumpkin for each country. Which country had the lowest mean weight?</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="xdjsxcukzf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xdjsxcukzf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xdjsxcukzf thead, #xdjsxcukzf tbody, #xdjsxcukzf tfoot, #xdjsxcukzf tr, #xdjsxcukzf td, #xdjsxcukzf th {
+  border-style: none;
+}
+
+#xdjsxcukzf p {
+  margin: 0;
+  padding: 0;
+}
+
+#xdjsxcukzf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xdjsxcukzf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xdjsxcukzf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xdjsxcukzf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xdjsxcukzf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xdjsxcukzf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xdjsxcukzf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xdjsxcukzf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xdjsxcukzf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xdjsxcukzf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xdjsxcukzf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xdjsxcukzf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xdjsxcukzf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xdjsxcukzf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xdjsxcukzf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdjsxcukzf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xdjsxcukzf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xdjsxcukzf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xdjsxcukzf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdjsxcukzf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xdjsxcukzf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdjsxcukzf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xdjsxcukzf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdjsxcukzf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xdjsxcukzf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xdjsxcukzf .gt_left {
+  text-align: left;
+}
+
+#xdjsxcukzf .gt_center {
+  text-align: center;
+}
+
+#xdjsxcukzf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xdjsxcukzf .gt_font_normal {
+  font-weight: normal;
+}
+
+#xdjsxcukzf .gt_font_bold {
+  font-weight: bold;
+}
+
+#xdjsxcukzf .gt_font_italic {
+  font-style: italic;
+}
+
+#xdjsxcukzf .gt_super {
+  font-size: 65%;
+}
+
+#xdjsxcukzf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xdjsxcukzf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xdjsxcukzf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xdjsxcukzf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xdjsxcukzf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xdjsxcukzf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xdjsxcukzf .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xdjsxcukzf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xdjsxcukzf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="variety" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">variety</th>
+<th id="mean_weight_lbs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">mean_weight_lbs</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="Canada" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Canada</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Canada  variety">Big Moose</td>
+<td class="gt_row gt_right" headers="Canada  mean_weight_lbs">721.2396</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="Germany" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Germany</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Germany  variety">Early Giant</td>
+<td class="gt_row gt_right" headers="Germany  mean_weight_lbs">520.7124</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="2" id="United States" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">United States</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="United States  variety">Spirit</td>
+<td class="gt_row gt_right" headers="United States  mean_weight_lbs">803.7595</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="from-pumpkins_filtered-plot-the-pumpkin-weight-distributions-for-the-three-countries-as-a-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="from-pumpkins_filtered-plot-the-pumpkin-weight-distributions-for-the-three-countries-as-a-boxplot">8. From “pumpkins_filtered” plot the pumpkin weight distributions for the three countries as a boxplot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R---Pumpkins-Output_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="from-pumpkins_filtered-plot-a-facet-plot-showing-the-data-from-each-variety-of-pumpkin-as-a-separate-sub-plot" class="level3">
+<h3 class="anchored" data-anchor-id="from-pumpkins_filtered-plot-a-facet-plot-showing-the-data-from-each-variety-of-pumpkin-as-a-separate-sub-plot">9. From “pumpkins_filtered” plot a facet plot showing the data from each variety of pumpkin as a separate sub-plot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R---Pumpkins-Output_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
